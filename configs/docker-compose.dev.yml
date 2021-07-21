@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+  nats:
+    image: nats
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+  gateway:
+    build:
+      context: ..
+      dockerfile: ./cmd/gateway/Dockerfile
